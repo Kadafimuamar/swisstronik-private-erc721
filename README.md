@@ -8,37 +8,60 @@ Ensure you have the following installed:
 - Node.js
 - npm
 
+## Faucet
+
+https://faucet.testnet.swisstronik.com/
+
 ## Setup Instructions
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/dante4rt/swisstronik-private-erc721.git
+    git clone https://github.com/kadafimuamar/swisstronik-private-erc721.git
     cd swisstronik-private-erc721
     ```
 
-2. Make the setup script executable and run it:
-    ```sh
-    chmod +x private.sh
-    ./private.sh
+2. Run
+
+    ```bash
+    npm install --save-dev @nomicfoundation/hardhat-toolbox
+    npm install dotenv
+    npm install @swisstronik/utils
+    npm install @openzeppelin/contracts
     ```
+
+## Create File .env for Private Key (Keep Safe for this)
+
+1. 
+
+```bash
+    PRIVATE_KEY=YOUR-PRIVATE-KEY
+```
+
+## Running
+
+1. Compile
+
+ ```bash
+    npx hardhat compile
+```
+
+2. Deploy Private erc-721
+
+ ```bash
+    npx hardhat run scripts/deploy.js --network swisstronik
+```
+
+3. Minting Private erc-721
+
+ ```bash
+    npx hardhat run scripts/mint.js --network swisstronik
+```
+
 
 3. Follow the prompts to enter your private key and NFT details.
 
-## Deployment
-
-The script will:
-- Install necessary dependencies.
-- Create a Hardhat project.
-- Configure the Hardhat environment.
-- Create and compile an ERC-721 contract, and its private.
-- Deploy the contract to the Swisstronik testnet.
-- Mint an NFT using the deployed contract.
 
 ## Notes
 
 - The contract address will be saved in `contract.txt`.
 - The transaction hash for the minting process will be printed in the terminal.
-
-## Contact
-
-For any issues or inquiries, please reach out via [Telegram](https://t.me/HappyCuanAirdrop).
